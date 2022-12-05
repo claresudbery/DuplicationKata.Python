@@ -1,4 +1,4 @@
-from Song import Song
+from kata.Song import Song
 
 
 def get_next_prime(number):

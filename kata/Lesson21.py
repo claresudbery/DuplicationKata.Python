@@ -1,4 +1,4 @@
-from Song import Song
+from kata.Song import Song
 
 
 class Lesson21(Song):
