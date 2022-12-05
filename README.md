@@ -1,4 +1,4 @@
-# DuplicationKata.java
+# DuplicationKata.python
 
 
 ## Resources
