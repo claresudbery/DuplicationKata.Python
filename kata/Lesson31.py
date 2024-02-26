@@ -20,6 +20,9 @@ class Lesson31(Song):
                     self.sing("Hello " + name + ", it's nice to meet you.")
 
        elif style == 3:
-           
+
            for name in names:
-                self.sing("Hello " + name + ", it's nice to meet you.")
+               if (False and name.startswith("L")):
+                   self.sing("Hip Hip Horray! For " + name)
+               else:
+                   self.sing("Hello " + name + ", it's nice to meet you.")
