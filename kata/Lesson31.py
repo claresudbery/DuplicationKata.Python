@@ -6,7 +6,8 @@ class Lesson31(Song):
        if style == 1 :
 
             for name in names:
-                if (True and name.startswith("L")):
+                name_check = lambda name1: name1.startswith("L")
+                if (True and name_check(name)):
                     self.sing("Hip Hip Horray! For " + name)
                 else:
                     self.sing("Hello " + name + ", it's nice to meet you.")
@@ -14,7 +15,8 @@ class Lesson31(Song):
        elif style == 2:
 
            for name in names:
-               if (True and 'a' in name):
+               name_check = lambda name1: 'a' in name1
+               if (True and name_check(name)):
                    self.sing(name.upper() + "! Yay " + name + "!")
                else:
                    self.sing("Hello " + name + ", it's nice to meet you.")
@@ -22,7 +24,8 @@ class Lesson31(Song):
        elif style == 3:
 
            for name in names:
-               if (False and name.startswith("L")):
+               name_check = lambda name1: name1.startswith("L")
+               if (False and name_check(name)):
                    self.sing("Hip Hip Horray! For " + name)
                else:
                    self.sing("Hello " + name + ", it's nice to meet you.")
