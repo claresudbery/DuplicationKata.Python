@@ -3,23 +3,14 @@ from kata.Song import Song
 
 class Lesson31(Song):
     def sing_song(self, style,names):
-       if style == 1 :
-            name_check = lambda name1: name1.startswith("L")
-            special_greeting = lambda name2: "Hip Hip Horray! For " + name2
-
-            self.sing_cheers(name_check, names, special_greeting)
+       if style == 1:
+           self.sing_cheers(lambda name1: name1.startswith("L"), names, lambda name2: "Hip Hip Horray! For " + name2)
 
        elif style == 2:
-           name_check = lambda name1: 'a' in name1
-           special_greeting = lambda name2: name2.upper() + "! Yay " + name2 + "!"
-
-           self.sing_cheers(name_check, names, special_greeting)
+           self.sing_cheers(lambda name1: 'a' in name1, names, lambda name2: name2.upper() + "! Yay " + name2 + "!")
 
        elif style == 3:
-           name_check = lambda name1: False
-           special_greeting = lambda name2: "Hip Hip Horray! For " + name2
-
-           self.sing_cheers(name_check, names, special_greeting)
+           self.sing_cheers(lambda name1: False, names, lambda name2: "Hip Hip Horray! For " + name2)
 
     def sing_cheers(self, name_check, names, special_greeting):
         for name in names:
