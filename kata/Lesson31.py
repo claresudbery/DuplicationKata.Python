@@ -24,7 +24,7 @@ class Lesson31(Song):
                    self.sing("Hello " + name + ", it's nice to meet you.")
 
        elif style == 3:
-           name_check = lambda name1: False and name1.startswith("L")
+           name_check = lambda name1: False
            special_greeting = lambda name2: "Hip Hip Horray! For " + name2
 
            for name in names:
