@@ -2,7 +2,7 @@ from kata.Song import Song
 
 
 class Lesson31(Song):
-    def sing_song(self, style,names):
+    def sing_song(self, style, names):
        if style == 1:
            self.sing_cheers(lambda name1: name1.startswith("L"), names, lambda name2: "Hip Hip Horray! For " + name2)
 
