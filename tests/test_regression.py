@@ -3,7 +3,15 @@ import unittest
 from approvaltests.approvals import verify
 from approvaltests.combination_approvals import verify_all_combinations
 from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
+
+from kata.Lesson32 import LineListType
 from kata.Song import Song
+
+
+def get_segment_index(list_type, line_segments, point):
+    from kata.Lesson32 import Lesson32
+    lesson_32 = Lesson32()
+    return lesson_32.get_segment_index(list_type, line_segments, point)
 
 
 class RegressionTest(unittest.TestCase):
@@ -45,6 +53,13 @@ class RegressionTest(unittest.TestCase):
         song.sing_song(2, names)
         song.sing_song(3, names)
         verify(song.song, self.reporter)
+
+    def test_segment_index(self):
+        arg1_combinations = (LineListType.SOURCE_HORIZONTAL, LineListType.DESTINATION_HORIZONTAL, LineListType.DESTINATION_VERTICAL)
+        arg2_combinations = (4, 5)
+        arg3_combinations = ("thing1", "thing2")
+        arg_combinations = (arg1_combinations, arg2_combinations, arg3_combinations)
+        verify_all_combinations(get_segment_index, arg_combinations)
 
     def test_combinations(self):
         arg1_combinations = (1, 2)
