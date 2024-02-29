@@ -1,6 +1,7 @@
 import unittest
 
 from approvaltests.approvals import verify
+from approvaltests.combination_approvals import verify_all_combinations
 from approvaltests.reporters.generic_diff_reporter_factory import GenericDiffReporterFactory
 from kata.Song import Song
 
@@ -44,3 +45,13 @@ class RegressionTest(unittest.TestCase):
         song.sing_song(2, names)
         song.sing_song(3, names)
         verify(song.song, self.reporter)
+
+    def test_combinations(self):
+        arg1_combinations = (1, 2)
+        arg2_combinations = (4, 5)
+        arg3_combinations = ("thing1", "thing2")
+        arg_combinations = (arg1_combinations, arg2_combinations, arg3_combinations)
+        verify_all_combinations(self.do_a_thing, arg_combinations)
+
+    def do_a_thing(self, int1, int2, string1):
+        return str(int1) + ", " + str(int2) + ", " + str(string1)
