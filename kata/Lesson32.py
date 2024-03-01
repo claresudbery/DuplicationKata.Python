@@ -9,9 +9,12 @@ class LineListType(Enum):
 
 
 class Point:
-    def __init__(self, X, Y):
-        self.X = X
-        self.Y = Y
+    def __init__(self, x, y):
+        self.X = x
+        self.Y = y
+
+    def __str__(self):
+        return f"X: {self.X}, Y: {self.Y}"
 
 
 class Lesson32:
