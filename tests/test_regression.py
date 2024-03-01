@@ -66,6 +66,33 @@ class RegressionTest(unittest.TestCase):
                 LineSegment(
                     start_point=Point(7776, 10),
                     end_point=Point(7778, 12),
+                    generation_point=Point(13, 8888)))),
+            SegmentList((
+                LineSegment(
+                    start_point=Point(9, 8888),
+                    end_point=Point(11, 99999),
+                    generation_point=Point(7776, 14)),
+                LineSegment(
+                    start_point=Point(7777, 10),
+                    end_point=Point(99999, 12),
+                    generation_point=Point(13, 8887)))),
+            SegmentList((
+                LineSegment(
+                    start_point=Point(9, 8888),
+                    end_point=Point(11, 999),
+                    generation_point=Point(7777, 14)),
+                LineSegment(
+                    start_point=Point(7777, 10),
+                    end_point=Point(999, 12),
+                    generation_point=Point(13, 8888)))),
+            SegmentList((
+                LineSegment(
+                    start_point=Point(9, 8889),
+                    end_point=Point(11, 99999),
+                    generation_point=Point(7777, 14)),
+                LineSegment(
+                    start_point=Point(7778, 10),
+                    end_point=Point(99999, 12),
                     generation_point=Point(13, 8888))))
         )
         arg3_combinations = (Point(7777, 8888),)
