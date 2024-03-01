@@ -2,7 +2,7 @@ from kata.Song import Song
 
 
 class Lesson31(Song):
-    def sing_song(self, style,names):
+    def sing_song(self, style, names):
        if style == 1 :
             for name in names:
                 if (name.startswith("L")):
