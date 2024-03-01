@@ -69,6 +69,11 @@ class RegressionTest(unittest.TestCase):
                     generation_point=Point(13, 8888)))),
             SegmentList((
                 LineSegment(
+                    start_point=Point(1, 2),
+                    end_point=Point(3, 4),
+                    generation_point=Point(5, 6)),)),
+            SegmentList((
+                LineSegment(
                     start_point=Point(9, 8888),
                     end_point=Point(11, 99999),
                     generation_point=Point(7776, 14)),
