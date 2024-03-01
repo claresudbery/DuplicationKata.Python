@@ -16,9 +16,6 @@ class Point:
         return f"X: {self.X}, Y: {self.Y}"
 
 
-from kata.Song import Song
-
-
 class SegmentList:
     def __init__(self, line_segments):
         self.line_segments = line_segments
