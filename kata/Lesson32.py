@@ -1,21 +1,4 @@
-from kata.Song import Song
-from enum import Enum
-
-
-class LineListType(Enum):
-    SOURCE_HORIZONTAL = 1
-    DESTINATION_HORIZONTAL = 2
-    DESTINATION_VERTICAL = 3
-
-
-class Point:
-    def __init__(self, x, y):
-        self.X = x
-        self.Y = y
-
-    def __str__(self):
-        return f"X: {self.X}, Y: {self.Y}"
-
+from kata.LineSegment import LineListType
 
 class Lesson32:
     def get_segment_index(self, list_type, line_segments, point):
