@@ -7,18 +7,27 @@ class Lesson32:
         segment_index = -1
 
         if list_type == LineListType.SOURCE_HORIZONTAL or list_type == LineListType.DESTINATION_HORIZONTAL:
-            for i in range(len(line_segments)):
-                line_segment = line_segments[i]
-                if (line_segment.generation_point.X == point.X
-                        and line_segment.start_point.Y <= point.Y <= line_segment.end_point.Y):
-                    segment_index = i
-                    break
-        else:
-            for i in range(len(line_segments)):
-                line_segment = line_segments[i]
-                if (line_segment.generation_point.Y == point.Y
-                        and line_segment.start_point.X <= point.X <= line_segment.end_point.X):
-                    segment_index = i
-                    break
 
+            point1 = lambda point_1 : point_1.X
+            point2 = lambda point_2: point_2.Y
+
+            segment_index = Lesson32.process_segments(line_segments, point, point1, point2, segment_index)
+
+        else:
+
+            point1 = lambda point_1: point_1.Y
+            point2 = lambda point_2: point_2.X
+
+            segment_index = Lesson32.process_segments(line_segments, point, point1, point2, segment_index)
+
+        return segment_index
+
+    @staticmethod
+    def process_segments(line_segments, point, point1, point2, segment_index):
+        for i in range(len(line_segments)):
+            line_segment = line_segments[i]
+            if (point1(line_segment.generation_point) == point1(point)
+                    and point2(line_segment.start_point) <= point2(point) <= point2(line_segment.end_point)):
+                segment_index = i
+                break
         return segment_index
