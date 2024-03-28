@@ -10,23 +10,25 @@ class Lesson3HigherOrderFunctions(Song):
     def sing_song(self):
         number = 2
         number_expression = number + 2
-        solo_line = "Who do we appreciate?"
 
-        self.sing_lines(number, number_expression, solo_line)
+        repeated_line = str(number) + "! "
+        self.sing(repeated_line)
+        #number = number_expression
+        self.sing(str(number) + "! ")
+        number = number_expression
+        self.sing(str(number) + "! ")
+        number = number_expression
+        self.sing(str(number) + "! ")
+        self.sing("Who do we appreciate?")
 
         number = 17
         number_expression = get_next_prime(number)
-        solo_line = "These are the primes, that we find fine!"
 
-        self.sing_lines(number, number_expression, solo_line)
-
-    def sing_lines(self, number, number_expression, solo_line):
-        repeated_line = str(number) + "! "
-        self.sing(repeated_line)
+        self.sing(str(number) + "! ")
         number = number_expression
-        self.sing(repeated_line)
+        self.sing(str(number) + "! ")
         number = number_expression
-        self.sing(repeated_line)
+        self.sing(str(number) + "! ")
         number = number_expression
-        self.sing(repeated_line)
-        self.sing(solo_line)
+        self.sing(str(number) + "! ")
+        self.sing("These are the primes, that we find fine!")

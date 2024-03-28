@@ -36,6 +36,7 @@ class RegressionTest(unittest.TestCase):
         from kata.Lesson3HigherOrderFunctions import Lesson3HigherOrderFunctions
         song = Lesson3HigherOrderFunctions()
         song.sing_song()
+        self.assertEqual(song.song, "Clare")
         verify(song.song, self.reporter)
 
     def test_names3(self):
